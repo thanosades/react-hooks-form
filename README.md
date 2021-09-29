@@ -2,5 +2,5 @@
 
 React form with validation, built using Tailwind, React-Hook-Form and Yup.
 
-When submitted, it only prints the resulting field
-in the console.
+Live demo deployed [here](https://fervent-kowalevski-ed1d06.netlify.app/). 
+When submitted, it only prints the resulting field in the console.
