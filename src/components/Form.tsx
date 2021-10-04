@@ -28,7 +28,7 @@ export default function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
     resolver: yupResolver(schema)
   });
-  const onSubmit = (data: object) => console.log(data);
+  const onSubmit = (data: IFormInputs) => console.log(data);
   return (
     <form action="#" onSubmit={handleSubmit(onSubmit)}>
       <div className="shadow overflow-hidden sm:rounded-md">
