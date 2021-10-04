@@ -1,17 +1,8 @@
 import { useForm } from 'react-hook-form';
+import { IFormInputs } from '../types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
-interface IFormInputs {
-  firstName: string;
-  lastName: string;
-  email: string;
-  country: string;
-  street: string;
-  city: string;
-  stateProvince: string;
-  zip: string;
-}
 
 const schema = yup.object().shape({
   firstName: yup.string().required(),
@@ -24,11 +15,11 @@ const schema = yup.object().shape({
   zip: yup.string().test('len', 'Must be exactly 5 characters', (val?: string) => !!val && val!.length === 5)
 });
 
-export default function Form() {
+export default function Form({ showData }: { showData: (incomingData: IFormInputs) => void }) {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
     resolver: yupResolver(schema)
   });
-  const onSubmit = (data: IFormInputs) => console.log(data);
+  const onSubmit = (data: IFormInputs) => showData(data);
   return (
     <form action="#" onSubmit={handleSubmit(onSubmit)}>
       <div className="shadow overflow-hidden sm:rounded-md">
