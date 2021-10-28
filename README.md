@@ -1,5 +1,5 @@
 # React-Hook-Form
-An average form made with TypeScript and React-Hook-Form.
+A React form made with TypeScript and React-Hook-Form.
 
 ## Installation instructions
 Clone the repo and use `npm install` from inside the `react-hooks-form` folder.
